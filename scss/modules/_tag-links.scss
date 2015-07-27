@@ -1,0 +1,29 @@
+
+$default-tag-base: yellow !default;
+$default-tag-hover: green !default;
+
+/**
+ * tag-links - Create a tag link.
+ * @param $tag-base: $default-tag-base
+ * @param $tag-hover: $default-tag-hover
+ */
+@mixin tag-links($tag-base: $default-tag-base, $tag-hover: $default-tag-hover) {
+    border: darken($tag-base,10%) solid 1px;
+    background-color: $tag-base;
+    padding: 2px;
+    display: inline-block;
+    margin: 0 0px 4px 0;
+
+    @include border-radius(4px);
+    @include text-shadow(0 1px 2px white);
+
+    &:hover {
+        background-color: $tag-hover;
+        border-color: darken($tag-hover,10%);
+        cursor: pointer;
+    }
+
+    @media (min-width: 75em) {
+        padding: 4px;
+    }
+}

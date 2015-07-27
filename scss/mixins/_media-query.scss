@@ -1,0 +1,39 @@
+
+$XS : 240px !default;
+$S : 380px !default;
+$M : 500px !default;
+$L : 700px !default;
+$XL: 1020px !default;
+$XXL: 1900px !default;
+
+$default-screen-size : XL !default;
+
+/**
+ * MQ - A mixin that creates a media query depending on the screen size.
+ * @param $screen-size: $default-screen-size
+ */
+@mixin MQ($screen-size: $default-screen-size) {
+    @if $screen-size == XS {
+    	@media only screen and (min-width: $XS) {
+    	    @content;
+    	}
+    } @else if $screen-size == S {
+    	@media only screen and (min-width: $S) {
+    	    @content;
+    	}
+    } @else if $screen-size == M {
+    	@media only screen and (min-width: $M) {
+    	    @content;
+    	}
+    } @else if $screen-size == L {
+    	@media only screen and (min-width: $L) {
+    	    @content;
+    	}
+    } @else if $screen-size == XL {
+    	@media only screen and (min-width: $XL) {
+    	    @content;
+    	}
+    } @else {
+        @content;
+    }
+}
