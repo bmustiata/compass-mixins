@@ -1,0 +1,10 @@
+$default-box-sizing : 0 !default;
+
+/**
+ * box-sizing - Sets the box sizing of the element.
+ * @param $box-sizing: $default-box-sizing
+ */
+@mixin box-sizing($box-sizing: $default-box-sizing) {
+    box-sizing: $box-sizing;
+}
+
