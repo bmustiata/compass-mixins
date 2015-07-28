@@ -1,12 +1,12 @@
 
-$XS : 240px !default;
-$S : 380px !default;
-$M : 500px !default;
-$L : 700px !default;
-$XL: 1020px !default;
-$XXL: 1900px !default;
+$XS : 6cm !default;
+$S : 10cm !default;
+$M : 15cm !default;
+$L : 20cm !default;
+$XL: 30cm !default;
+$XXL: 50cm !default;
 
-$default-screen-size : XL !default;
+$default-screen-size : S !default;
 
 /**
  * MQ - A mixin that creates a media query depending on the screen size.

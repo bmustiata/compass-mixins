@@ -1,29 +1,39 @@
 
 $default-tag-base: yellow !default;
 $default-tag-hover: green !default;
+$default-tag-text-color : white !default;
+$default-tag-padding : 4px !default;
+$default-tag-border: darken($default-tag-base, 10) solid 1px !default;
+$default-tag-border-hover: darken($default-tag-base, 10) solid 1px !default;
 
 /**
  * tag-links - Create a tag link.
  * @param $tag-base: $default-tag-base
  * @param $tag-hover: $default-tag-hover
  */
-@mixin tag-links($tag-base: $default-tag-base, $tag-hover: $default-tag-hover) {
-    border: darken($tag-base,10%) solid 1px;
+@mixin tag-links($tag-base: $default-tag-base,
+                $tag-hover: $default-tag-hover,
+                $tag-text-color: $default-tag-text-color,
+                $tag-padding: $default-tag-padding,
+                $tag-border: $default-tag-border,
+                $tag-border-hover: $default-tag-border-hover) {
+    border: $tag-border;
     background-color: $tag-base;
-    padding: 2px;
+    padding: $tag-padding;
     display: inline-block;
     margin: 0 0px 4px 0;
+    color: $tag-text-color;
+
+    * {
+        color: $tag-text-color;
+    }
 
     @include border-radius(4px);
-    @include text-shadow(0 1px 2px white);
+    @include text-shadow(0px 1px 1px white);
 
     &:hover {
         background-color: $tag-hover;
-        border-color: darken($tag-hover,10%);
+        border: $tag-border-hover;
         cursor: pointer;
-    }
-
-    @media (min-width: 75em) {
-        padding: 4px;
     }
 }
