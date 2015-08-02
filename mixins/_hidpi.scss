@@ -1,0 +1,11 @@
+$defaultDevicePixelPartio : 1.5 !default;
+
+/**
+ * hidpi - Ouputs a media query that matches the DPI.
+ * @param $devicePixelRatio: $defaultDevicePixelPartio
+ */
+@mixin hidpi($devicePixelRatio: $defaultDevicePixelPartio) {
+    @media only screen and (-webkit-min-device-pixel-ratio: $devicePixelRatio), only screen and (-moz-min-device-pixel-ratio: $devicePixelRatio), only screen and (-o-min-device-pixel-ratio: $devicePixelRatio / 1), only screen and (min-resolution: $devicePixelRatio + dppx) {
+        @content
+    }
+}
